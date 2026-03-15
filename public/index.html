@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <h1>Project Management System</h1>
+        <p>Manage projects and tasks from any device.</p>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel">
+          <h2>Create / Update Project</h2>
+          <form id="project-form" class="form-grid">
+            <input type="hidden" id="project-id" />
+            <label>
+              Project Name
+              <input type="text" id="project-name" required />
+            </label>
+            <label>
+              Description
+              <textarea id="project-description" rows="3"></textarea>
+            </label>
+            <label>
+              Status
+              <select id="project-status">
+                <option>Planned</option>
+                <option>In Progress</option>
+                <option>On Hold</option>
+                <option>Completed</option>
+              </select>
+            </label>
+            <label>
+              Due Date
+              <input type="date" id="project-dueDate" />
+            </label>
+            <div class="form-actions">
+              <button type="submit">Save Project</button>
+              <button type="button" id="project-reset" class="ghost">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Projects</h2>
+          <div id="project-list" class="card-list"></div>
+        </section>
+
+        <section class="panel full-width">
+          <div class="task-header">
+            <h2>Tasks</h2>
+            <p id="selected-project-label">Select a project to view tasks.</p>
+          </div>
+          <form id="task-form" class="form-grid" hidden>
+            <input type="hidden" id="task-id" />
+            <label>
+              Task Title
+              <input type="text" id="task-title" required />
+            </label>
+            <label>
+              Assignee
+              <input type="text" id="task-assignee" />
+            </label>
+            <label>
+              Priority
+              <select id="task-priority">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+            <label>
+              Status
+              <select id="task-status">
+                <option>To Do</option>
+                <option>In Progress</option>
+                <option>Review</option>
+                <option>Done</option>
+              </select>
+            </label>
+            <label>
+              Due Date
+              <input type="date" id="task-dueDate" />
+            </label>
+            <div class="form-actions">
+              <button type="submit">Save Task</button>
+              <button type="button" id="task-reset" class="ghost">Clear</button>
+            </div>
+          </form>
+          <div id="task-list" class="card-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
